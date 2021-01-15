@@ -58,8 +58,8 @@ exports.getFamilia = async (req, res, next) => {
 exports.updateFamilia = async (req, res, next) => {
   try {
     const familia = FamiliaSchema.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
+      new: true, //retorna el nuevo objeto en vez del viejo
+      runValidators: true, //usa las validaciones al editar
     });
     if (!familia) {
       res.status(404).json({ success: false });
