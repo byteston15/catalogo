@@ -1,0 +1,14 @@
+const mongoose = require("mongoose");
+const colors = require("colors");
+
+const connectDB = async () => {
+  const conn = await mongoose.connect(PORT, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  });
+  console.log(`Mongodb connected : ${conn.connection.host}`);
+};
+
+module.exports = connectDB;
