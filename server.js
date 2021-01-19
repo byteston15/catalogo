@@ -3,6 +3,7 @@ const connectDB = require("./config/db");
 const morgan = require("morgan");
 const r_familia = require("./routes/r_familia");
 const dotenv = require("dotenv");
+const errorHandler = require("./middlewares/error");
 
 //Instancias
 dotenv.config({
@@ -17,7 +18,9 @@ app.use(express.json());
 
 //Middlewares
 
-app.use("apiCatalogoWeb/v0.0.1", r_familia);
+app.use("/api/v1/Catalogo", r_familia);
+
+app.use(errorHandler);
 
 const server = app.listen(PORT, console.log(`We're on port ${PORT}`));
 
