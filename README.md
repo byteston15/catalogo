@@ -4,6 +4,7 @@ Modulo de catalogo web en el cual se encontrará las funcionalidades para visual
 ##Ejecutar proyecto como desarrollador 
 ```javascript
 npm run dev
+```
 
 ##Versión Actual
 V.0.0.1
