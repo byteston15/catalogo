@@ -10,5 +10,5 @@ V.0.0.1
 
 
 ##Links de trabajo
-[Evernote](https://www.evernote.com/shard/s553/sh/4b050c8f-071e-021b-e629-b3801a8e9c74/9c882e46a273ebb72129a138d4433677) (Notas importantes del proyecto)
-[Jira](https://ti-area.atlassian.net/l/c/WXJ0nGah)Deben enviar una solicitud para registrarlos y acceder a la pagina. 
+[Evernote](https://www.evernote.com/shard/s553/sh/4b050c8f-071e-021b-e629-b3801a8e9c74/9c882e46a273ebb72129a138d4433677) 
+[Jira](https://ti-area.atlassian.net/l/c/WXJ0nGah) 
