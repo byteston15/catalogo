@@ -12,4 +12,6 @@ V.0.0.1
 
 ## Links de trabajo
 Notas del proyecto [Evernote](https://www.evernote.com/shard/s553/sh/4b050c8f-071e-021b-e629-b3801a8e9c74/9c882e46a273ebb72129a138d4433677) 
+
+
 Hoja de ruta del proyecto [Jira](https://ti-area.atlassian.net/l/c/WXJ0nGah) (Hay que solicitar acceso para visualizar la hoja de ruta)
