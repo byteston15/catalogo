@@ -1,4 +1,3 @@
-const asyncHandler = require("../middlewares/async");
 const precioSchema = require("../models/Precio");
 const asyncHandler = require("../middlewares/async");
 const errorResponse = require("../utils/errorResponse");
@@ -30,7 +29,15 @@ exports.deletePrecio = asyncHandler(async (req, res, next) => {
 });
 
 exports.getPrecios = asyncHandler(async (req, res, next) => {
-  const precio = await precioSchema.find();
+  let query;
+  let queryStr = JSON.stringify(req.query); //req.query saca la query de lo que queremos, stringify convierte el json a string cada valor
+  queryStr = queryStr.replace(
+    /\b(gt|gte|lt|lte|in)\b/g, //ruta?campoAbuscar[lte|gte|gt]=valorBuscado&otraQuery
+    (match) => `$${match}`
+  ); //reemplazamos por uno de los metodos y le agregamos $
+  query = await precioSchema.find(JSON.parse(queryStr));
+  const precio = query;
+
   res.status(200).json({ success: true, data: precio });
 });
 

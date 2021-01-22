@@ -1,10 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const { default: slugify } = require("slugify");
 
-const PrecioSchema = new mongoose.Schema({
-    nombre : {
-        type : String,
-        required : [true, 'La lista de precios debe tener un nombre']
-    }
-}, {timestamps : true} );
+const PrecioSchema = new mongoose.Schema(
+  {
+    nombre: {
+      type: String,
+      required: [true, "La lista de precios debe tener un nombre"],
+      unique: true,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Precio', PrecioSchema);
+PrecioSchema.pre("save", function (next) {
+  this.nombre = slugify(this.nombre, { lower: true });
+  next();
+});
+
+module.exports = mongoose.model("Precio", PrecioSchema);
