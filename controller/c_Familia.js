@@ -18,7 +18,7 @@ exports.createFamilia = asyncHandler(async (req, res, next) => {
 @Access     Public
 */
 exports.getFamilias = asyncHandler(async (req, res, next) => {
-  const familia = await FamiliaSchema.find();
+  const familia = await FamiliaSchema.find(req.query); //?nombre=plumillas
   res.status(200).json({
     success: true,
     data: familia,
