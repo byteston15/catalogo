@@ -18,8 +18,10 @@ exports.savePrecio = asyncHandler(async (req, res, next) => {
 exports.deletePrecio = asyncHandler(async (req, res, next) => {
   const precio = await precioSchema.findByIdAndDelete(req.params.id);
   if (!precio) {
-    return new errorResponse(
-      `No existe una lista de precios con el id ${req.params.id}`
+    return next(
+      new errorResponse(
+        `No existe una lista de precios con el id ${req.params.id}`
+      )
     );
   }
   res.status(200).json({
@@ -44,8 +46,10 @@ exports.getPrecios = asyncHandler(async (req, res, next) => {
 exports.getPrecio = asyncHandler(async (req, res, next) => {
   const precio = precioSchema.findById(req.params.id);
   if (!precio) {
-    return new errorResponse(
-      `No se encontró lista de precio con el id ${req.params.id}`
+    return next(
+      new errorResponse(
+        `No se encontró lista de precio con el id ${req.params.id}`
+      )
     );
   }
   res.status(200).json({
@@ -60,8 +64,10 @@ exports.updatePrecio = asyncHandler(async (req, res, next) => {
     runValidators: true,
   });
   if (!precio) {
-    return new errorResponse(
-      `No se encontró lista de precio con el id ${req.params.id}`
+    return next(
+      new errorResponse(
+        `No se encontró lista de precio con el id ${req.params.id}`
+      )
     );
   }
   res.status(200).json({

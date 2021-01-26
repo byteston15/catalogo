@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const ProductoSchema = new mongoose.Schema(
   {
     codigo: {
+      type: String,
       required: [true, "El código es un campo obligatorio"],
       min: [4, "El código debe tener al menos 4 caracteres"],
       max: [30, "El código no puede tener más de 30 caracteres"],
@@ -13,6 +14,7 @@ const ProductoSchema = new mongoose.Schema(
       default: "default.jpg",
     },
     codigoBarra: {
+      type: String,
       required: [true, "El código de barras es un campo obligatorio"],
       min: [4, "El código de barras debe tener minimo 4 caracteres"],
       max: [30, "El código de barras no puede tener más de 30 caracteres"],

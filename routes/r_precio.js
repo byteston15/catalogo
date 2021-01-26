@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const {
-  deletePrecio,
-  getPrecio,
-  getPrecios,
   savePrecio,
+  deletePrecio,
+  getPrecios,
+  getPrecio,
   updatePrecio,
 } = require("../controller/c_Precios");
 
 router.route("/").get(getPrecios).post(savePrecio);
-router.route("/:id").get(getPrecio).delete(deletePrecio).put(updatePrecio);
+
+router.route("/:id").put(updatePrecio).delete(deletePrecio).get(getPrecio);
 
 module.exports = router;

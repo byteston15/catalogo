@@ -3,6 +3,7 @@ const connectDB = require("./config/db");
 const morgan = require("morgan");
 const r_familia = require("./routes/r_familia");
 const r_precio = require("./routes/r_precio");
+const r_producto = require("./routes/r_producto");
 const dotenv = require("dotenv");
 const errorHandler = require("./middlewares/error");
 
@@ -24,6 +25,7 @@ if (process.env.NODE_ENV === "development") {
 
 app.use("/api/v1/Catalogo/Familias", r_familia);
 app.use("/api/v1/Catalogo/ListaPrecios", r_precio);
+app.use("/api/v1/Catalogo/Productos", r_producto);
 
 app.use(errorHandler);
 
