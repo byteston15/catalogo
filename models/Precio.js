@@ -6,6 +6,7 @@ const PrecioSchema = new mongoose.Schema(
     nombre: {
       type: String,
       required: [true, "La lista de precios debe tener un nombre"],
+      trim: true,
       unique: true,
     },
   },
