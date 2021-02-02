@@ -25,7 +25,6 @@ if (process.env.NODE_ENV === "development") {
 
 app.use("/api/v1/Catalogo/Familias", r_familia);
 app.use("/api/v1/Catalogo/ListaPrecios", r_precio);
-app.use("/api/v1/Catalogo/Productos", r_producto);
 
 app.use(errorHandler);
 

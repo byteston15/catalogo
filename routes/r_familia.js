@@ -1,5 +1,4 @@
 const express = require("express");
-const router = express.Router();
 const {
   createFamilia,
   updateFamilia,
@@ -7,6 +6,8 @@ const {
   getFamilia,
   getFamilias,
 } = require("../controller/c_Familia");
+
+const router = express.Router();
 
 router.route("/").get().post(createFamilia).get(getFamilias);
 
